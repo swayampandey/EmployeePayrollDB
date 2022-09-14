@@ -45,3 +45,10 @@ mysql> Describe employee_payroll;
 | start  | date         | NO   |     | NULL    |                |
 +--------+--------------+------+-----+---------+----------------+
 4 rows in set (0.01 sec)
+
+UC3-->> Ability to create employee payroll data in the payroll service database as part of CRUD Operation 
+
+insert into employee_payroll( name, salary, start) values
+( 'Swayam', 35000.00, '2022-08-15'),
+( 'Prakash', 30000.00, '2021-09-21'),
+( 'Abhishek', 35000.00, '2020-06-14');
