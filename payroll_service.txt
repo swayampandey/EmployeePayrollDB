@@ -115,3 +115,55 @@ mysql> select * from employee_payroll;
 |  3 | Abhishek | M      |  35000 | 2020-06-14 |
 +----+----------+--------+--------+------------+
 3 rows in set (0.00 sec)
+
+UC7--->>>>>>>>> Ability to find sum, average, min, max and number of male and female employees --->>>>>>>>>>>>>>>>
+
+mysql> select * from employee_payroll;
++----+----------+--------+--------+------------+
+| id | name     | gender | salary | start      |
++----+----------+--------+--------+------------+
+|  1 | Swayam   | M      |  35000 | 2022-08-15 |
+|  2 | Prakash  | M      |  30000 | 2021-09-21 |
+|  3 | Abhishek | M      |  35000 | 2020-06-14 |
++----+----------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
+mysql> Select AVG(salary) from employee_payroll where gender = 'M' group by gender;
++--------------------+
+| AVG(salary)        |
++--------------------+
+| 33333.333333333336 |
++--------------------+
+1 row in set (0.01 sec)
+
+mysql> Select Sum(salary) from employee_payroll where gender = 'M' group by gender;
++-------------+
+| Sum(salary) |
++-------------+
+|      100000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> Select Max(salary) from employee_payroll where gender = 'M' group by gender;
++-------------+
+| Max(salary) |
++-------------+
+|       35000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> Select Min(salary) from employee_payroll where gender = 'M' group by gender;
++-------------+
+| Min(salary) |
++-------------+
+|       30000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> Select Count(salary) from employee_payroll where gender = 'M' group by gender;
++---------------+
+| Count(salary) |
++---------------+
+|             3 |
++---------------+
+1 row in set (0.00 sec)
